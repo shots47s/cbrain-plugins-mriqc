@@ -1,6 +1,6 @@
 {
     "author": "Plodrack lab",
-    "command-line": "mriqc_run.py [BIDS_DIR] [OUTPUT_DIR] [ANALYSIS_LEVEL] [VERSION] [PARTICIPANT_LABEL] [SESSION_ID] [RUN_ID] [TASK_ID] [MODALITIES] [DSNAME] [WORK_DIR] [VERBOSE_REPORTS] [WRITE_GRAPH] [DRY_RUN] [PROFILE] [USE_PLUGIN] [NO_SUB] [EMAIL] [VERBOSE_COUNT] [WEBAPI_URL] [WEBAPI_PORT] [UPLOAD_STRICT] [N_PROCS] [MEM_GB] [TESTING] [FLOAT32] [ICA] [HMC_AFNI] [HMC_FSL] [FFT_SPIKES_DETECTOR] [FD_THRES] [ANTS_NTHREADS] [ANTS_FLOAT] [ANTS_SETTINGS] [DEOBLIQUE] [DESPIKE] [START_IDX] [STOP_IDX] [CORRECT_SLICE_TIMING]",
+    "command-line": "mriqc [BIDS_DIR] [OUTPUT_DIR] [ANALYSIS_LEVEL] [VERSION] [PARTICIPANT_LABEL] [SESSION_ID] [RUN_ID] [TASK_ID] [MODALITIES] [DSNAME] [WORK_DIR] [VERBOSE_REPORTS] [WRITE_GRAPH] [DRY_RUN] [PROFILE] [USE_PLUGIN] [NO_SUB] [EMAIL] [VERBOSE_COUNT] [WEBAPI_URL] [WEBAPI_PORT] [UPLOAD_STRICT] [N_PROCS] [MEM_GB] [TESTING] [FLOAT32] [ICA] [HMC_AFNI] [HMC_FSL] [FFT_SPIKES_DETECTOR] [FD_THRES] [ANTS_NTHREADS] [ANTS_FLOAT] [ANTS_SETTINGS] [DEOBLIQUE] [DESPIKE] [START_IDX] [STOP_IDX] [CORRECT_SLICE_TIMING]",
     "description": "Automated Quality Control and visual reports for Quality Assesment of structural (T1w, T2w) and functional MRI of the brain",
     "tool-version": "v0.14.2",
     "url": "https://mriqc.readthedocs.io/en/0.14.2",
@@ -25,7 +25,6 @@
         {
             "description": "Level of the analysis that will be performed. Multiple participant level analyses can be run independently (in parallel) using the same output_dir.",
             "id": "analysis_level",
-            "list": true,
             "name": "analysis_level",
             "optional": false,
             "type": "String",
@@ -52,6 +51,7 @@
             "name": "participant_label",
             "optional": true,
             "type": "String",
+            "list": true,
             "value-key": "[PARTICIPANT_LABEL]"
         },
         {
@@ -61,6 +61,7 @@
             "name": "session_id",
             "optional": true,
             "type": "String",
+            "list": true,
             "value-key": "[SESSION_ID]"
         },
         {
@@ -452,7 +453,7 @@
     "name": "MRIQC",
     "schema-version": "0.5",
     "suggested-resources": {
-        "cpu-cores": 1,
+        "cpu-cores": 4,
         "ram": 4,
         "walltime-estimate": 172000
     },
@@ -471,5 +472,5 @@
      },
      "custom": {
         "cbrain:readonly-input-files": true
-     },
+     }
 }
