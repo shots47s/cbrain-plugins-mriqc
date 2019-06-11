@@ -16,8 +16,8 @@
         },
         {
             "description": "The directory where the output files should be stored. If you are running group level analysis this folder should be prepopulated with the results of theparticipant level analysis.",
-            "id": "output_dir",
-            "name": "output_dir",
+            "id": "output_dir_name",
+            "name": "output_dir_name",
             "optional": false,
             "type": "String",
             "value-key": "[OUTPUT_DIR]"
